@@ -264,7 +264,7 @@
     .step-item h3 { font-size: 1.4rem; margin-bottom:0.5rem; }
     .step-item p { color: #555; }
 
-    /* testimonials carousel (unchanged) */
+    /* testimonials carousel */
     .testimonials {
       background: white;
       border-radius: 60px 60px 40px 40px;
@@ -311,7 +311,7 @@
     }
     .dot.active { background:var(--primary); transform:scale(1.2); }
 
-    /* recent donors (new) */
+    /* recent donors */
     .recent-donors {
       background: white;
       border-radius: 40px;
@@ -343,7 +343,7 @@
       color: var(--accent-green);
     }
 
-    /* gallery & footer (same as before) */
+    /* gallery */
     .gallery-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:1.5rem; margin-top:2rem;
     }
@@ -388,7 +388,7 @@
     }
     .modal-content {
       background: white;
-      max-width: 500px;
+      max-width: 550px;
       width: 90%;
       border-radius: 48px;
       padding: 2rem;
@@ -452,9 +452,65 @@
       position:absolute; bottom:130%; left:50%; transform:translateX(-50%); white-space:nowrap;
     }
     .tooltip-text.show { visibility:visible; }
-    .thank-you-modal {
-      background:#4CAF50; color:white; padding:1rem; border-radius:60px; text-align:center;
-      margin-top:1rem;
+
+    /* WhatsApp proof message (step 3) */
+    .whatsapp-message {
+      background: #dcf8c6; /* light green WhatsApp style */
+      padding: 1.5rem;
+      border-radius: 32px;
+      margin: 1.5rem 0;
+      text-align: center;
+      border: 2px solid #25D366;
+    }
+    .whatsapp-number {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #075e54;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .whatsapp-link {
+      background: #25D366;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 1rem;
+    }
+    .whatsapp-link:hover {
+      background: #128C7E;
+    }
+    .small-note {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 0.8rem;
+    }
+    .flex-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
     }
 
     /* mobile */

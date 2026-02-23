@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Google Font: Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- floating counter -->
@@ -60,8 +60,8 @@
       </div>
       <div class="step-item slide-right">
         <div class="step-icon"><i class="fas fa-check-circle"></i></div>
-        <h3>3. Confirm payment</h3>
-        <p>We update the total instantly.</p>
+        <h3>3. Confirm & send proof</h3>
+        <p>We update total, then WhatsApp proof.</p>
       </div>
     </div>
   </section>
@@ -71,12 +71,10 @@
     <h3><i class="fas fa-users" style="color:var(--primary);"></i> Recent donors</h3>
     <div class="donor-list" id="donorList">
       <!-- will be populated by JS -->
-      <div class="donor-badge"><i class="fas fa-user"></i> Fatima R350</div>
-      <div class="donor-badge"><i class="fas fa-user"></i> Ahmed R500</div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS (carousel unchanged) -->
+  <!-- TESTIMONIALS (carousel) -->
   <section class="testimonials">
     <h2 class="section-title">Community trust</h2>
     <div class="carousel-container">
@@ -97,10 +95,11 @@
   <section class="gallery">
     <h2 class="section-title">Project in progress</h2>
     <div class="gallery-grid">
-      <!-- <div class="gallery-item"><img src="https://c8.alamy.com/comp/GXDNB0/nigeria-city-lagos-central-mosque-and-market-street-GXDNB0.jpg" alt="Mosque blueprint" loading="lazy"></div> -->
+       <div class="gallery-item"><img src="https://c8.alamy.com/comp/GXDNB0/nigeria-city-lagos-central-mosque-and-market-street-GXDNB0.jpg" alt="Mosque blueprint" loading="lazy"></div>
       <div class="gallery-item"><img src="https://africanarguments.org/wp-content/uploads/2018/10/maiduguri-religion-boko-haram-2.jpg" alt="Construction" loading="lazy"></div>
       <div class="gallery-item"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/48/35/da/getlstd-property-photo.jpg?w=1200&h=-1&s=1" alt="Community" loading="lazy"></div>
       <div class="gallery-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB1EBXLTVgVDB5jo9YJmkbEQWLmgSCNrFki-7aVBOJiA&s" alt="Model" loading="lazy"></div>
+    </div>
     </div>
     <div class="project-desc fade-up">
       <p><i class="fas fa-mosque" style="color:var(--primary);"></i> <strong>Phase one complete:</strong> foundation and ground floor. Next: minaret and main hall. Your support accelerates the timeline.</p>
@@ -111,17 +110,17 @@
   <footer>
     <div class="footer-grid">
       <div class="contact-info">
-        <!-- <span><i class="fab fa-whatsapp"></i> <a href="#">+27 12 345 6789</a></span> -->
-        <span><i class="far fa-envelope"></i> <a href="#">NoorAlHaramMosque@com</a></span>
+        <span><i class="fab fa-whatsapp"></i> <a href="https://wa.me/2348135997440?text=I%20made%20a%20donation%20to%20Noor%20Al-Haram%20Mosque" target="_blank">0813 599 7440</a></span>
+        <!-- <span><i class="far fa-envelope"></i> <a href="mailto:donate@nooralharam.org">donate@nooralharam.org</a></span> -->
       </div>
       <div class="footer-links">
         <a href="#">About Project</a> | <a href="#">Privacy Policy</a>
       </div>
-      <!-- <div class="social-icons">
+      <div class="social-icons">
         <a href="#"><i class="fab fa-facebook-f"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
-      </div> -->
+      </div>
     </div>
     <p style="text-align:center; margin-top:2rem; color:#aaa;">© 2025 Noor Al-Haram Mosque</p>
   </footer>
@@ -154,10 +153,23 @@
           </div>
         </div>
         <button class="btn-modal" id="confirmPaymentBtnModal">✔ I’ve made the payment</button>
-        <p style="text-align:center; margin-top:1rem;"><button id="backToStep1" style="background:none; border:none; color:var(--primary);">← Edit</button></p>
+        <p style="text-align:center; margin-top:1rem;"><button id="backToStep1" style="background:none; border:none; color:var(--primary);">← Edit amount</button></p>
       </div>
       <div id="modalStep3" class="modal-step hidden">
-        <div class="thank-you-modal" id="thankYouModalMsg">Thank you! Your donation is recorded.</div>
+        <div class="whatsapp-message">
+          <i class="fab fa-whatsapp" style="font-size:3rem; color:#25D366;"></i>
+          <h3 style="margin:0.5rem 0;">Thank you for your donation!</h3>
+          <p>Please send your proof of payment to our WhatsApp number so we can confirm your contribution.</p>
+          <div class="whatsapp-number">
+            <span>0813 599 7440</span>
+            <button class="copy-btn tooltip" id="copyWhatsappBtn"><i class="far fa-copy"></i><span class="tooltip-text" id="whatsappTooltip">Copied!</span></button>
+          </div>
+          <div class="flex-row">
+            <a href="https://wa.me/2348135997440?text=I%20have%20made%20a%20donation%20to%20Noor%20Al-Haram%20Mosque.%20Please%20find%20attached%20proof." target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i> Send via WhatsApp</a>
+          </div>
+          <p class="small-note">We'll update the total and add your name to recent donors.</p>
+        </div>
+        <button class="btn-modal" id="closeAfterProofBtn">Close</button>
       </div>
     </div>
   </div>
@@ -209,7 +221,7 @@
 
       // ----- MODAL ELEMENTS -----
       const modal = document.getElementById('donationModal');
-      const openModalBtns = document.querySelectorAll('#donateNowHero, #donateNowHow'); // we'll also add to step1 button? we already have hero.
+      const openModalBtn = document.getElementById('donateNowHero');
       const closeModalBtn = document.getElementById('closeModalBtn');
       const step1 = document.getElementById('modalStep1');
       const step2 = document.getElementById('modalStep2');
@@ -217,20 +229,19 @@
       const nextToAccount = document.getElementById('nextToAccountBtn');
       const confirmPayment = document.getElementById('confirmPaymentBtnModal');
       const backToStep1 = document.getElementById('backToStep1');
+      const closeAfterProof = document.getElementById('closeAfterProofBtn');
       const donorNameInput = document.getElementById('donorName');
       const donorAmountInput = document.getElementById('donorAmount');
-      const copyBtn = document.getElementById('copyAccountBtn');
+      const copyAccountBtn = document.getElementById('copyAccountBtn');
       const copyTooltip = document.getElementById('copyTooltip');
+      const copyWhatsappBtn = document.getElementById('copyWhatsappBtn');
+      const whatsappTooltip = document.getElementById('whatsappTooltip');
 
-      // open modal from any donate button
-      document.querySelectorAll('.btn-primary').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          if (btn.id !== 'donateNowHero') return; // but we have only hero with that id, but also could add extra
-          e.preventDefault();
-          openModal();
-        });
+      // open modal
+      openModalBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
       });
-      // Also open from "Donate Now" text in steps? we can add another button in hero, it's fine.
 
       function openModal() {
         modal.classList.add('active');
@@ -272,7 +283,7 @@
       });
 
       // Copy account number
-      copyBtn.addEventListener('click', async () => {
+      copyAccountBtn.addEventListener('click', async () => {
         try {
           await navigator.clipboard.writeText('1847012661');
           copyTooltip.classList.add('show');
@@ -282,7 +293,18 @@
         }
       });
 
-      // Confirm payment: add donation, show step3, then close after short delay
+      // Copy WhatsApp number
+      copyWhatsappBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText('08135997440');
+          whatsappTooltip.classList.add('show');
+          setTimeout(() => whatsappTooltip.classList.remove('show'), 1500);
+        } catch (err) {
+          alert('Copy manually: 0813 599 7440');
+        }
+      });
+
+      // Confirm payment: add donation, show step3 (WhatsApp proof)
       confirmPayment.addEventListener('click', () => {
         const name = sessionStorage.getItem('pendingName') || 'Anonymous';
         const amount = sessionStorage.getItem('pendingAmount') || 200;
@@ -290,19 +312,20 @@
         // clear session
         sessionStorage.removeItem('pendingName');
         sessionStorage.removeItem('pendingAmount');
-        // show step3 thank you
+        // show step3
         step2.classList.add('hidden');
         step3.classList.remove('hidden');
-        // auto close modal after 2 sec
-        setTimeout(() => {
-          modal.classList.remove('active');
-          // reset to step1 for next time
-          step3.classList.add('hidden');
-          step1.classList.remove('hidden');
-        }, 1800);
       });
 
-      // particles (same as before)
+      // Close modal from step3 button
+      closeAfterProof.addEventListener('click', () => {
+        modal.classList.remove('active');
+        // reset to step1 for next time
+        step3.classList.add('hidden');
+        step1.classList.remove('hidden');
+      });
+
+      // particles
       const particlesContainer = document.getElementById('particles');
       if (particlesContainer) {
         for (let i = 0; i < 20; i++) {
@@ -318,7 +341,7 @@
         }
       }
 
-      // carousel (minimal)
+      // carousel
       const track = document.getElementById('carouselTrack');
       const prev = document.getElementById('prevBtn');
       const next = document.getElementById('nextBtn');
@@ -334,11 +357,8 @@
       next.addEventListener('click', ()=>updateCarousel(idx+1));
       dots.forEach((dot,i)=>dot.addEventListener('click',()=>updateCarousel(i)));
       setInterval(()=>updateCarousel(idx+1), 5000);
-    })();
-  </script>
-  <!-- ensure scroll reveal -->
-  <script>
-    (function() {
+
+      // scroll reveal
       const fadeEl = document.querySelectorAll('.fade-up, .slide-right');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(e => e.target.classList.add('appear'));
