@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Noor Al-Haram Mosque · Donate & build</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Font: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- floating counter -->
+  <div class="floating-counter">
+    <i class="fas fa-hand-holding-heart"></i>
+    <div>
+      <span class="counter-number" id="floatingCounter">R350,000</span>
+      <span class="counter-label">raised</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="particles" id="particles"></div>
+    <div class="hero-content">
+      <h1>Help Build Noor Al-Haram Mosque</h1>
+      <p>Your donation will bring this vision to life.</p>
+      <button class="btn-primary" id="donateNowHero"><i class="fas fa-heart"></i> Donate Now</button>
+    </div>
+  </section>
+
+  <!-- PROGRESS (updated with ZAR) -->
+  <section class="progress">
+    <div class="progress-card fade-up">
+      <div class="stats">
+        <span class="raised" id="totalRaised">R350,000</span>
+        <span class="target">of R500,000 target</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-fill" id="progressFill" style="width: 70%;"></div>
+      </div>
+      <div class="percentage" id="percentageText">70% funded</div>
+    </div>
+  </section>
+
+  <!-- HOW TO DONATE -->
+  <section class="how-to-donate">
+    <h2 class="section-title slide-right">How to donate</h2>
+    <div class="steps-grid">
+      <div class="step-item slide-right">
+        <div class="step-icon"><i class="fas fa-hand-pointer"></i></div>
+        <h3>1. Click Donate Now</h3>
+        <p>Enter your name and amount.</p>
+      </div>
+      <div class="step-item slide-right">
+        <div class="step-icon"><i class="fas fa-university"></i></div>
+        <h3>2. Use bank details</h3>
+        <p>Capitec account – copy & pay.</p>
+      </div>
+      <div class="step-item slide-right">
+        <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+        <h3>3. Confirm payment</h3>
+        <p>We update the total instantly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECENT DONORS (dynamic) -->
+  <section class="recent-donors" id="recentDonorsSection">
+    <h3><i class="fas fa-users" style="color:var(--primary);"></i> Recent donors</h3>
+    <div class="donor-list" id="donorList">
+      <!-- will be populated by JS -->
+      <div class="donor-badge"><i class="fas fa-user"></i> Fatima R350</div>
+      <div class="donor-badge"><i class="fas fa-user"></i> Ahmed R500</div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS (carousel unchanged) -->
+  <section class="testimonials">
+    <h2 class="section-title">Community trust</h2>
+    <div class="carousel-container">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="testimonial-card"><i class="fas fa-quote-right"></i><p>"This project will serve generations. I've seen the plans—transparent and inspiring."</p><h4>— Imam Yusuf Al-Mansour</h4></div>
+        <div class="testimonial-card"><i class="fas fa-quote-right"></i><p>"Donated last month. The team updates donors regularly. Full trust."</p><h4>— Fatima Hassan</h4></div>
+        <div class="testimonial-card"><i class="fas fa-quote-right"></i><p>"A beautiful initiative that brings the community together. May Allah reward everyone."</p><h4>— Abdullah Khan</h4></div>
+      </div>
+      <button class="carousel-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+      <button class="carousel-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <div class="carousel-dots" id="carouselDots">
+      <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery">
+    <h2 class="section-title">Project in progress</h2>
+    <div class="gallery-grid">
+      <!-- <div class="gallery-item"><img src="https://c8.alamy.com/comp/GXDNB0/nigeria-city-lagos-central-mosque-and-market-street-GXDNB0.jpg" alt="Mosque blueprint" loading="lazy"></div> -->
+      <div class="gallery-item"><img src="https://africanarguments.org/wp-content/uploads/2018/10/maiduguri-religion-boko-haram-2.jpg" alt="Construction" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/48/35/da/getlstd-property-photo.jpg?w=1200&h=-1&s=1" alt="Community" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB1EBXLTVgVDB5jo9YJmkbEQWLmgSCNrFki-7aVBOJiA&s" alt="Model" loading="lazy"></div>
+    </div>
+    <div class="project-desc fade-up">
+      <p><i class="fas fa-mosque" style="color:var(--primary);"></i> <strong>Phase one complete:</strong> foundation and ground floor. Next: minaret and main hall. Your support accelerates the timeline.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="contact-info">
+        <!-- <span><i class="fab fa-whatsapp"></i> <a href="#">+27 12 345 6789</a></span> -->
+        <span><i class="far fa-envelope"></i> <a href="#">NoorAlHaramMosque@com</a></span>
+      </div>
+      <div class="footer-links">
+        <a href="#">About Project</a> | <a href="#">Privacy Policy</a>
+      </div>
+      <!-- <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div> -->
+    </div>
+    <p style="text-align:center; margin-top:2rem; color:#aaa;">© 2025 Noor Al-Haram Mosque</p>
+  </footer>
+
+  <!-- MODAL (donation flow) -->
+  <div class="modal-overlay" id="donationModal">
+    <div class="modal-content">
+      <button class="close-modal" id="closeModalBtn"><i class="fas fa-times"></i></button>
+      <div id="modalStep1" class="modal-step">
+        <h2 style="font-size:1.8rem;">Donate with bank transfer</h2>
+        <p style="margin-bottom:1rem;">Your support counts.</p>
+        <input type="text" id="donorName" class="name-input" placeholder="Your full name" value="New Donor">
+        <div class="amount-input-group">
+          <span class="currency-symbol">R</span>
+          <input type="number" id="donorAmount" class="amount-input" placeholder="Amount" min="1" value="200">
+        </div>
+        <button class="btn-modal" id="nextToAccountBtn">Pay Now <i class="fas fa-arrow-right"></i></button>
+      </div>
+      <div id="modalStep2" class="modal-step hidden">
+        <h3 style="margin-bottom:0.5rem;">Transfer to this account</h3>
+        <div class="account-detail">
+          <div class="detail-row"><span class="detail-label">Bank</span><span class="detail-value">Capitec</span></div>
+          <div class="detail-row"><span class="detail-label">Account Name</span><span class="detail-value">RAMAVHULELA DD</span></div>
+          <div class="detail-row">
+            <span class="detail-label">Account Number</span>
+            <div class="detail-value">
+              1847012661
+              <button class="copy-btn tooltip" id="copyAccountBtn"><i class="far fa-copy"></i><span class="tooltip-text" id="copyTooltip">Copied!</span></button>
+            </div>
+          </div>
+        </div>
+        <button class="btn-modal" id="confirmPaymentBtnModal">✔ I’ve made the payment</button>
+        <p style="text-align:center; margin-top:1rem;"><button id="backToStep1" style="background:none; border:none; color:var(--primary);">← Edit</button></p>
+      </div>
+      <div id="modalStep3" class="modal-step hidden">
+        <div class="thank-you-modal" id="thankYouModalMsg">Thank you! Your donation is recorded.</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      // ----- GLOBAL STATE -----
+      let totalRaised = 350000; // R
+      const target = 500000;
+      const raisedSpan = document.getElementById('totalRaised');
+      const progressFill = document.getElementById('progressFill');
+      const percentageSpan = document.getElementById('percentageText');
+      const floatingCounter = document.getElementById('floatingCounter');
+      const donorListDiv = document.getElementById('donorList');
+
+      // Recent donors array (starts with two examples)
+      let recentDonors = [
+        { name: 'Fatima', amount: 350 },
+        { name: 'Ahmed', amount: 500 }
+      ];
+
+      function updateUI() {
+        raisedSpan.innerText = 'R' + totalRaised.toLocaleString();
+        floatingCounter.innerText = 'R' + totalRaised.toLocaleString();
+        const percent = (totalRaised / target) * 100;
+        progressFill.style.width = percent + '%';
+        percentageSpan.innerText = percent.toFixed(1) + '% funded';
+
+        // refresh donor list
+        donorListDiv.innerHTML = '';
+        recentDonors.slice(-5).forEach(d => {
+          const badge = document.createElement('div');
+          badge.className = 'donor-badge';
+          badge.innerHTML = `<i class="fas fa-user"></i> ${d.name} R${d.amount}`;
+          donorListDiv.appendChild(badge);
+        });
+      }
+
+      function addDonation(name, amount) {
+        const numAmount = Number(amount);
+        if (isNaN(numAmount) || numAmount <= 0) return;
+        totalRaised += numAmount;
+        recentDonors.push({ name, amount: numAmount });
+        updateUI();
+      }
+
+      // initial update
+      updateUI();
+
+      // ----- MODAL ELEMENTS -----
+      const modal = document.getElementById('donationModal');
+      const openModalBtns = document.querySelectorAll('#donateNowHero, #donateNowHow'); // we'll also add to step1 button? we already have hero.
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const step1 = document.getElementById('modalStep1');
+      const step2 = document.getElementById('modalStep2');
+      const step3 = document.getElementById('modalStep3');
+      const nextToAccount = document.getElementById('nextToAccountBtn');
+      const confirmPayment = document.getElementById('confirmPaymentBtnModal');
+      const backToStep1 = document.getElementById('backToStep1');
+      const donorNameInput = document.getElementById('donorName');
+      const donorAmountInput = document.getElementById('donorAmount');
+      const copyBtn = document.getElementById('copyAccountBtn');
+      const copyTooltip = document.getElementById('copyTooltip');
+
+      // open modal from any donate button
+      document.querySelectorAll('.btn-primary').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          if (btn.id !== 'donateNowHero') return; // but we have only hero with that id, but also could add extra
+          e.preventDefault();
+          openModal();
+        });
+      });
+      // Also open from "Donate Now" text in steps? we can add another button in hero, it's fine.
+
+      function openModal() {
+        modal.classList.add('active');
+        // reset to step1
+        step1.classList.remove('hidden');
+        step2.classList.add('hidden');
+        step3.classList.add('hidden');
+        donorNameInput.value = '';
+        donorAmountInput.value = '200';
+      }
+
+      closeModalBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+      });
+      // click outside to close
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.remove('active');
+      });
+
+      // Step1 -> Step2
+      nextToAccount.addEventListener('click', () => {
+        const name = donorNameInput.value.trim() || 'Anonymous';
+        const amount = donorAmountInput.value.trim();
+        if (!amount || isNaN(amount) || Number(amount) <= 0) {
+          alert('Please enter a valid amount');
+          return;
+        }
+        // store in session for later
+        sessionStorage.setItem('pendingName', name);
+        sessionStorage.setItem('pendingAmount', amount);
+        step1.classList.add('hidden');
+        step2.classList.remove('hidden');
+      });
+
+      // back to step1
+      backToStep1.addEventListener('click', () => {
+        step2.classList.add('hidden');
+        step1.classList.remove('hidden');
+      });
+
+      // Copy account number
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText('1847012661');
+          copyTooltip.classList.add('show');
+          setTimeout(() => copyTooltip.classList.remove('show'), 1500);
+        } catch (err) {
+          alert('Copy manually: 1847012661');
+        }
+      });
+
+      // Confirm payment: add donation, show step3, then close after short delay
+      confirmPayment.addEventListener('click', () => {
+        const name = sessionStorage.getItem('pendingName') || 'Anonymous';
+        const amount = sessionStorage.getItem('pendingAmount') || 200;
+        addDonation(name, Number(amount));
+        // clear session
+        sessionStorage.removeItem('pendingName');
+        sessionStorage.removeItem('pendingAmount');
+        // show step3 thank you
+        step2.classList.add('hidden');
+        step3.classList.remove('hidden');
+        // auto close modal after 2 sec
+        setTimeout(() => {
+          modal.classList.remove('active');
+          // reset to step1 for next time
+          step3.classList.add('hidden');
+          step1.classList.remove('hidden');
+        }, 1800);
+      });
+
+      // particles (same as before)
+      const particlesContainer = document.getElementById('particles');
+      if (particlesContainer) {
+        for (let i = 0; i < 20; i++) {
+          const p = document.createElement('span');
+          p.classList.add('particle');
+          p.style.width = (Math.random()*12+4)+'px';
+          p.style.height = p.style.width;
+          p.style.left = Math.random()*100+'%';
+          p.style.animationDelay = Math.random()*10+'s';
+          p.style.animationDuration = (Math.random()*12+8)+'s';
+          p.style.background = `rgba(255,87,34,${Math.random()*0.3+0.2})`;
+          particlesContainer.appendChild(p);
+        }
+      }
+
+      // carousel (minimal)
+      const track = document.getElementById('carouselTrack');
+      const prev = document.getElementById('prevBtn');
+      const next = document.getElementById('nextBtn');
+      const dots = document.querySelectorAll('.dot');
+      let idx = 0;
+      function updateCarousel(index) {
+        if (index<0) index=2; if (index>2) index=0;
+        track.style.transform = `translateX(-${index*100}%)`;
+        dots.forEach((d,i)=>d.classList.toggle('active', i===index));
+        idx = index;
+      }
+      prev.addEventListener('click', ()=>updateCarousel(idx-1));
+      next.addEventListener('click', ()=>updateCarousel(idx+1));
+      dots.forEach((dot,i)=>dot.addEventListener('click',()=>updateCarousel(i)));
+      setInterval(()=>updateCarousel(idx+1), 5000);
+    })();
+  </script>
+  <!-- ensure scroll reveal -->
+  <script>
+    (function() {
+      const fadeEl = document.querySelectorAll('.fade-up, .slide-right');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => e.target.classList.add('appear'));
+      }, {threshold:0.2});
+      fadeEl.forEach(el => observer.observe(el));
+    })();
+  </script>
+</body>
+</html>
